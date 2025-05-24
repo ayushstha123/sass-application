@@ -1,5 +1,7 @@
 import Link from "next/link"
 import MaxWidthWrapper from "./MaxWidthWrapper"
+import { LoginLink, RegisterLink } from "@kinde-oss/kinde-auth-nextjs/server"
+import {  ArrowRight } from "lucide-react"
 
 export const NavBar = () => {
     return (
@@ -11,9 +13,15 @@ export const NavBar = () => {
                     </Link>
                     <div className="hidden items-center space-x-4 sm:flex">
                         <>
-                            <Link href="/" className="py-2 px-4 bg-gray-200 hover-bg-gray-300 text-black rounded-lg ring-gray-400">
+                            <Link href="/" className="py-2 px-4 bg-gray-200 hover:bg-gray-300 text-black rounded-lg ring-gray-400">
                                 Pricing
                             </Link>
+                            <LoginLink className="py-2 px-4 bg-gray-200 hover:bg-gray-300 text-black rounded-lg ring-gray-400">
+                                Sign In
+                            </LoginLink>
+                            <RegisterLink className="py-2 px-4 bg-neutral-800 flex items-center gap-4 hover:bg-neutral-800 text-white rounded-lg ring-gray-400">
+                               Get Started <ArrowRight/>
+                            </RegisterLink>
                         </>
                     </div>
                 </div>
