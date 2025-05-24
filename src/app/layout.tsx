@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Inter } from "next/font/google";
 import "./globals.css";
+import { cn } from "@/lib/utils";
+import { NavBar } from "@/components/Navbar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,8 +27,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${inter.variable} antialiased min-h-screen font-sans grainy dark`}
+        className={`${geistSans.variable} ${inter.variable} ${cn('min-h-screen font-sans antialiased grainy')}`}
       >
+          <NavBar/>
         {children}
       </body>
     </html>
